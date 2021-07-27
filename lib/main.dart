@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quizApp/quizApp.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,11 +24,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Test App'),
+        title: Text('Quiz App'),
       ),
-      body: Center(
-        child: Text('Clone from diffrent machime'),
-      ),
+      body: QuizApp(),
     );
   }
 }
