@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
         title: Text('Test App'),
       ),
       body: Center(
-        child: Text('App Body'),
+        child: Text('Clone from diffrent machime'),
       ),
     );
   }
