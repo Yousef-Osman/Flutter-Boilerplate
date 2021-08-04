@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'httpApp/httpApp.dart';
-import 'quizApp/quizApp.dart';
+import 'package:flutter_boilerplate/shopApp/screens/productDetailsScreen.dart';
+import 'shopApp/screens/productsOverviewScreen.dart';
+// import 'httpApp/httpApp.dart';
+// import 'quizApp/quizApp.dart';
 // import 'todoList/todoList.dart';
 // import 'flutterForm/flutterForm.dart';
 
@@ -15,24 +17,30 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
+        accentColor: Colors.deepOrange,
+        // primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: ProductsOverviewScreen(),
+      routes: {
+        ProductDetailsScreen.routeName: (ctx) => ProductDetailsScreen(),
+      },
+      // home: HomePage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Quiz App'),
-      ),
-      body: HttpApp(),
-      // body: QuizApp(),
-      // body: FlutterForm(),
-      // body: TodoList(),
-    );
-  }
-}
+// class HomePage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Quiz App'),
+//       ),
+//       // body: HttpApp(),
+//       // body: QuizApp(),
+//       // body: FlutterForm(),
+//       // body: TodoList(),
+//     );
+//   }
+// }
