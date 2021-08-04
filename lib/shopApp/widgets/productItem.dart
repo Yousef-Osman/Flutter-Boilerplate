@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/shopApp/models/product.dart';
 import 'package:flutter_boilerplate/shopApp/screens/productDetailsScreen.dart';
 
 class ProductItem extends StatelessWidget {
-  // final String id;
-  // final String title;
-  // final String imageUrl;
-  final Product product;
+  final String id;
+  final String title;
+  final String imageUrl;
 
   ProductItem({
-    // @required this.id,
-    // @required this.title,
-    // @required this.imageUrl,
-    @required this.product,
+    @required this.id,
+    @required this.title,
+    @required this.imageUrl,
   });
 
   @override
@@ -24,11 +21,11 @@ class ProductItem extends StatelessWidget {
           onTap: () {
             Navigator.of(context).pushNamed(
               ProductDetailsScreen.routeName,
-              arguments: this.product,
+              arguments: this.id,
             );
           },
-          child: Image.network(
-            this.product.imageUrl,
+          child: Image.asset(
+            this.imageUrl,
             fit: BoxFit.cover,
           ),
         ),
@@ -39,7 +36,7 @@ class ProductItem extends StatelessWidget {
             color: Theme.of(context).accentColor,
           ),
           title: Text(
-            this.product.title,
+            this.title,
             textAlign: TextAlign.center,
           ),
           trailing: (IconButton(

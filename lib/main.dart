@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_boilerplate/shopApp/providers/products.dart';
 import 'package:flutter_boilerplate/shopApp/screens/productDetailsScreen.dart';
+import 'package:provider/provider.dart';
 import 'shopApp/screens/productsOverviewScreen.dart';
 // import 'httpApp/httpApp.dart';
 // import 'quizApp/quizApp.dart';
@@ -13,19 +15,22 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-        accentColor: Colors.deepOrange,
-        // primarySwatch: Colors.blue,
+    return ChangeNotifierProvider(
+      create: (ctx) => Products(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.purple,
+          accentColor: Colors.deepOrange,
+          // primarySwatch: Colors.blue,
+        ),
+        home: ProductsOverviewScreen(),
+        routes: {
+          ProductDetailsScreen.routeName: (ctx) => ProductDetailsScreen(),
+        },
+        // home: HomePage(),
       ),
-      home: ProductsOverviewScreen(),
-      routes: {
-        ProductDetailsScreen.routeName: (ctx) => ProductDetailsScreen(),
-      },
-      // home: HomePage(),
     );
   }
 }
