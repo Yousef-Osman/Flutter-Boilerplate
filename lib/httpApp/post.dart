@@ -5,4 +5,6 @@ class Post {
   String body;
 
   Post();
+
+  static fromJson(item) {}
 }
