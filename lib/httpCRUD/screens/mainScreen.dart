@@ -18,6 +18,7 @@ class _HttpCRUDState extends State<HttpCRUD> {
         title: Text('Sales Orders'),
       ),
       body: Container(
+        padding: EdgeInsets.fromLTRB(5, 10, 5, 0),
         child: FutureBuilder(
           future: httpService.getPosts(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -75,26 +76,3 @@ class _HttpCRUDState extends State<HttpCRUD> {
     );
   }
 }
-
-
-
-// FutureBuilder(
-//         future: httpService.getPosts(),
-//         builder: (BuildContext context, AsyncSnapshot<List<Post>> snapshot) {
-//           if (snapshot.hasData) {
-//             List<Post> posts = snapshot.data;
-//             return ListView(
-//               children: posts
-//                   .map(
-//                     (Post post) => ListTile(
-//                       title: Text(post.title),
-//                       subtitle: Text("${post.userId}"),
-//                     ),
-//                   )
-//                   .toList(),
-//             );
-//           } else {
-//             return Center(child: CircularProgressIndicator());
-//           }
-//         },
-//       ),
